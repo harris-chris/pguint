@@ -30,7 +30,7 @@ uint--$(extension_version).sql: uint.sql hash.sql hex.sql operators.sql
 PYTHON ?= python
 
 operators.c operators.sql test/sql/operators.sql: generate.py
-	$(PYTHON) $< $(MAJORVERSION)
+	python $< $(MAJORVERSION)
 
 python-check: generate.py
 	pep8 $^
